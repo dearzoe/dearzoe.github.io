@@ -10,7 +10,7 @@
 <section id="main">
     <header>
         <span>
-            <a href="/archives/"><img src="http://huwenzhe.com/blogIndex/images/touxiang.jpg" alt=""></a>
+            <a href="/archives/"><img src="" alt="" guoyu-src="http://huwenzhe.com/blogIndex/images/touxiang.jpg" id="huwenzhe"></a>
         </span>
         <h1>胡文哲</h1>
         <p>真的希望时间能在某一时刻停止</p>
@@ -1120,4 +1120,12 @@ void main(void) {
     (function (w, r) {
         w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
     })(window, 'equestAnimationFrame');
+</script>
+<script type="text/javascript">
+    var aImg = document.getElementById('huwenzhe');
+    window.onload = function() {
+        if (aImg.getAttribute('src') == '') {
+            aImg.src = aImg.getAttribute('guoyu-src');
+        }
+    };
 </script>
