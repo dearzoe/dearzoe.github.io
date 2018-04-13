@@ -23,14 +23,14 @@
 <meta property="og:site_name" content="成长笔记">
 <meta property="og:description" content="npm包管理器一直是经常用的，上面有各种大神写的工具包然而我们自己却很少发布包；以下就整理一下发布包的基本方法;">
 <meta property="og:image" content="https://docs.npmjs.com/images/npm.svg">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm1.png">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm2.png">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm3.png">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm4.png">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm5.png">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm7.png">
-<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/npm6.png">
-<meta property="og:updated_time" content="2018-04-13T07:13:11.207Z">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm1.png">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm2.png">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm3.png">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm4.png">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm5.png">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm7.png">
+<meta property="og:image" content="http://huwenzhe.com/blogIndex/images/npm6.png">
+<meta property="og:updated_time" content="2018-04-13T07:51:24.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm包管理器发布">
 <meta name="twitter:description" content="npm包管理器一直是经常用的，上面有各种大神写的工具包然而我们自己却很少发布包；以下就整理一下发布包的基本方法;">
@@ -329,15 +329,15 @@
 <p>或者通过<code>npm config list</code>命令查看一系列详细信息;其中包含node和npm 版本；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">; cli configs</span><br><span class="line">metrics-registry = &quot;http://registry.npmjs.o</span><br><span class="line">scope = &quot;&quot;</span><br><span class="line">user-agent = &quot;npm/5.3.0 node/v8.4.0 win32 x</span><br><span class="line"></span><br><span class="line">; userconfig C:\Users\Administrator\.npmrc</span><br><span class="line">//registry.npm.taobao.org/:always-auth = fa</span><br><span class="line">//registry.npm.taobao.org/:email = &quot;8258461</span><br><span class="line">//registry.npm.taobao.org/:username = &quot;dear</span><br><span class="line">registry = &quot;http://registry.npmjs.org/&quot;</span><br><span class="line"></span><br><span class="line">; builtin config undefined</span><br><span class="line">prefix = &quot;C:\\Users\\Administrator\\AppData</span><br><span class="line"></span><br><span class="line">; node bin location = C:\Program Files\node</span><br><span class="line">; cwd = C:\</span><br><span class="line">; HOME = C:\Users\Administrator</span><br><span class="line">; &quot;npm config ls -l&quot; to show all defaults.</span><br></pre></td></tr></table></figure></p>
 <p>顺带说个命令：<br><code>npm config get prefix</code>获取当前global位置</p>
 <p>然后安装卸载更新就不说了;</p>
-<p>现在开始正题：<strong>发布</strong><br>首先我们的有一个账号，直接在<a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM官网</a>注册就好了；<br>这是注册好之后（忽略左上角那个包，是瞎写的）<br><img src="http://dearzoe.coding.me/blogImg/images/npm1.png"></p>
-<p>注册之后我们就在本地创建一个文件夹，用来作为发布我们包的仓库，就可以理解为GitHub仓库一样；<br><img src="http://dearzoe.coding.me/blogImg/images/npm2.png"></p>
-<p>进入之后我们运行<code>npm init</code>初始化；<br><img src="http://dearzoe.coding.me/blogImg/images/npm3.png"></p>
-<p>然后<code>npm login</code>登录，就是我们申请的账号密码；<br><img src="http://dearzoe.coding.me/blogImg/images/npm4.png"></p>
-<p><strong>错误处理</strong><br><img src="http://dearzoe.coding.me/blogImg/images/npm5.png"><br><img src="http://dearzoe.coding.me/blogImg/images/npm7.png"></p>
+<p>现在开始正题：<strong>发布</strong><br>首先我们的有一个账号，直接在<a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM官网</a>注册就好了；<br>这是注册好之后（忽略左上角那个包，是瞎写的）<br><img src="http://huwenzhe.com/blogIndex/images/npm1.png"></p>
+<p>注册之后我们就在本地创建一个文件夹，用来作为发布我们包的仓库，就可以理解为GitHub仓库一样；<br><img src="http://huwenzhe.com/blogIndex/images/npm2.png"></p>
+<p>进入之后我们运行<code>npm init</code>初始化；<br><img src="http://huwenzhe.com/blogIndex/images/npm3.png"></p>
+<p>然后<code>npm login</code>登录，就是我们申请的账号密码；<br><img src="http://huwenzhe.com/blogIndex/images/npm4.png"></p>
+<p><strong>错误处理</strong><br><img src="http://huwenzhe.com/blogIndex/images/npm5.png"><br><img src="http://huwenzhe.com/blogIndex/images/npm7.png"></p>
 <blockquote>
 <p>这个就是因为我在开始命名的时候没有去验证名字，然后名字重复了，在然后在package.json中更改了name，再<code>npm publish</code>就可以了；</p>
 </blockquote>
-<p>v1.0.0版本发布<br><img src="http://dearzoe.coding.me/blogImg/images/npm6.png"></p>
+<p>v1.0.0版本发布<br><img src="http://huwenzhe.com/blogIndex/images/npm6.png"></p>
 <p>如果我们想要发布版本，就需要更改我们的文件之后在package.json中更改version,要比上个版本号大，以免报错；</p>
 
       
@@ -350,7 +350,7 @@
         <p><span>本文标题:</span><a href="/2017/10/11/npm包管理器/">npm包管理器发布</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">文哲</a></p>
         <p><span>发布时间:</span>2017-10-11, 00:00:00</p>
-        <p><span>最后更新:</span>2018-04-13, 15:13:11</p>
+        <p><span>最后更新:</span>2018-04-13, 15:51:24</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/11/npm包管理器/" title="npm包管理器发布">http://huwenzhe.com/2017/10/11/npm包管理器/</a>
             <span class="copy-path" data-clipboard-text="原文: http://huwenzhe.com/2017/10/11/npm包管理器/　　作者: 文哲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
