@@ -1157,6 +1157,7 @@ body .ui-tooltip {
 }
 .archives .archive-article-title {
   font-size: 1.125rem;
+  font-weight: 700;
   color: #333;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -2025,6 +2026,7 @@ aside.comment-bar:active {
 }
 .archives .archive-article-title {
   font-size: 1.125rem;
+  font-weight: 700;
   color: #333;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
