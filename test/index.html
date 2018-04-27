@@ -1488,17 +1488,32 @@ void main(void) {
         window.onload = function () {
             //okpt("CSS Particle Effects");
             function initparticles() {
-                // bubbles();
-                hearts();
-                // lines();
-                // confetti();
-                // fire();
-                // sunbeams();
+                var num = $.rnd(1,6)
+                switch (num) {
+                    case 1:
+                        bubbles();
+                        break;
+                    case 2:
+                        hearts();
+                        break;
+                    case 3:
+                        lines();
+                        break;
+                    case 4:
+                        confetti();
+                        break;
+                    case 5:
+                        fire();
+                        break;
+                    case 6:
+                        sunbeams();
+                        break;
+                }
             }
             /*The measurements are ... whack (so to say), for more general text usage I would generate different sized particles for the size of text; consider this pen a POC*/
             function bubbles() {
                 $.each($(".wrap-word-gw"), function(){
-                    var bubblecount = ($(this).width()/50)*10;
+                    var bubblecount = ($(this).width()/20)*10;
                     for(var i = 0; i <= bubblecount; i++) {
                         var size = ($.rnd(40,80)/10);
                         $(this).append('<span class="bubbles" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
@@ -1508,7 +1523,7 @@ void main(void) {
 
             function hearts() {
                 $.each($(".wrap-word-gw"), function(){
-                    var heartcount = ($(this).width()/50)*5;
+                    var heartcount = ($(this).width()/20)*5;
                     for(var i = 0; i <= heartcount; i++) {
                         var size = ($.rnd(60,120)/10);
                         $(this).append('<span class="hearts" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
@@ -1518,7 +1533,7 @@ void main(void) {
 
             function lines() {
                 $.each($(".wrap-word-gw"), function(){
-                    var linecount = ($(this).width()/50)*10;
+                    var linecount = ($(this).width()/20)*10;
                     for(var i = 0; i <= linecount; i++) {
                         $(this).append('<span class="lines" style="top:' + $.rnd(-30,30) + '%; left:' + $.rnd(-10,110) + '%;width:' + $.rnd(1,3) + 'px; height:' + $.rnd(20,80) + '%;animation-delay: -' + ($.rnd(0,30)/10) + 's;"></span>');
                     }
@@ -1527,7 +1542,7 @@ void main(void) {
 
             function confetti() {
                 $.each($(".wrap-word-gw"), function(){
-                    var confetticount = ($(this).width()/50)*10;
+                    var confetticount = ($(this).width()/20)*10;
                     for(var i = 0; i <= confetticount; i++) {
                         $(this).append('<span class="confetti c' + $.rnd(1,2) + '" style="top:' + $.rnd(10,50) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(6,8) + 'px; height:' + $.rnd(3,4) + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
                     }
@@ -1536,7 +1551,7 @@ void main(void) {
 
             function fire() {
                 $.each($(".wrap-word-gw"), function(){
-                    var firecount = ($(this).width()/50)*20;
+                    var firecount = ($(this).width()/20)*20;
                     for(var i = 0; i <= firecount; i++) {
                         var size = $.rnd(8,12);
                         $(this).append('<span class="fire" style="top:' + $.rnd(40,70) + '%; left:' + $.rnd(-10,100) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,20)/10) + 's;"></span>');
@@ -1546,7 +1561,7 @@ void main(void) {
 
             function sunbeams() {
                 $.each($(".wrap-word-gw"), function(){
-                    var linecount = ($(this).width()/50)*10;
+                    var linecount = ($(this).width()/20)*10;
                     for(var i = 0; i <= linecount; i++) {
                         $(this).append('<span class="sunbeams" style="top:' + $.rnd(-50,00) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(1,3) + 'px; height:' + $.rnd(80,160) + '%;animation-delay: -' + ($.rnd(0,30)/10) + 's;"></span>');
                     }
