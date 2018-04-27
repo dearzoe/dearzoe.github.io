@@ -3070,6 +3070,19 @@ body .particletext.bubbles > .particle {
   animation: bubbles 3s ease-in infinite;
   border-radius: 100%;
 }
+/*made in css3 2018/4/27*/
+body .wrap-word-gw > .particle {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(33,150,243,0.5);
+  -webkit-animation: bubbles 3s ease-in infinite;
+  -webkit-animation: bubbles 3s ease-in infinite;
+  -moz-animation: bubbles 3s ease-in infinite;
+  -ms-animation: bubbles 3s ease-in infinite;
+  animation: bubbles 3s ease-in infinite;
+  border-radius: 100%;
+}
+/*made in css3 2018/4/27*/
 body .particletext.hearts > .particle {
   opacity: 0;
   position: absolute;
@@ -3340,6 +3353,7 @@ body .particletext.sunbeams > .particle {
     opacity: 1;
   }
 }
+/*css3文字2018/4/27  url'http://www.17sucai.com/pins/26326.html'*/
 @-moz-keyframes bubbles {
   0% {
     opacity: 0;
