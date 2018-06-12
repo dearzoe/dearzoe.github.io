@@ -115,7 +115,9 @@
 <body>
 <div id="container">
     <div class="left-col">
-        <div class="overlay"></div>
+        <div class="overlay">
+    <div id="aplayer"></div>
+</div>
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
@@ -233,9 +235,32 @@
     </canvas>
     <script src='/./live2d.min.js'></script>
     <script src="/./live.min.js"></script>
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
     <script>
         window.onload = function () {
             SampleApp2();
+            console.log('\n' + ' %c APlayer' +'这里加了音频按钮，未配置完成'+ ' %c http://aplayer.js.org ' + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
+            var ap = new APlayer({
+                container: document.getElementById('aplayer'),
+                mini: false,
+                autoplay: false,
+                theme: '#FADFA3',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: '90px',
+                lrcType: 3,
+                audio: [{
+                    name: '崖上的波妞',
+                    artist: '宗介',
+                    url: '../../mp3/崖上的波妞.mp3',
+                    cover: 'http://dearzoe.coding.me/blogImg/images/touxiang.jpg'
+                }]
+            });
         }
     </script>
 </div>
