@@ -115,8 +115,7 @@
 <body>
 <div id="container">
     <div class="left-col">
-        <div class="overlay">
-    <div id="aplayer"></div>
+        <div class="overlay" style="opacity: 1;">
 </div>
 <div class="intrude-less">
     <header id="header" class="inner">
@@ -243,7 +242,37 @@
             console.log('\n' + ' %c APlayer' +'这里加了音频按钮，未配置完成'+ ' %c http://aplayer.js.org ' + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
             var ap = new APlayer({
                 container: document.getElementById('aplayer'),
-                mini: false,
+                fixed: true,
+                lrcType: 3,
+                audio: [{
+                    name: '崖上的波妞',
+                    artist: '宗介',
+                    url: '../../mp3/崖上的波妞.mp3',
+                    lrc: '../../mp3/boniu.lrc',
+                    cover: '../../img/boniu.jpg'
+                }, {
+                    name: '光るなら',
+                    artist: 'Goose house',
+                    url: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.mp3',
+                    cover: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.jpg',
+                    lrc: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.lrc',
+                    theme: '#ebd0c2'
+                }, {
+                    name: 'トリカゴ',
+                    artist: 'XX:me',
+                    url: 'https://moeplayer.b0.upaiyun.com/aplayer/darling.mp3',
+                    cover: 'https://moeplayer.b0.upaiyun.com/aplayer/darling.jpg',
+                    lrc: 'https://moeplayer.b0.upaiyun.com/aplayer/darling.lrc',
+                    theme: '#46718b'
+                }, {
+                    name: '前前前世',
+                    artist: 'RADWIMPS',
+                    url: 'https://moeplayer.b0.upaiyun.com/aplayer/yourname.mp3',
+                    cover: 'https://moeplayer.b0.upaiyun.com/aplayer/yourname.jpg',
+                    lrc: 'https://moeplayer.b0.upaiyun.com/aplayer/yourname.lrc',
+                    theme: '#505d6b'
+                }]
+                /*mini: false,
                 autoplay: false,
                 theme: '#FADFA3',
                 loop: 'all',
@@ -258,13 +287,15 @@
                     name: '崖上的波妞',
                     artist: '宗介',
                     url: '../../mp3/崖上的波妞.mp3',
-                    cover: 'http://dearzoe.coding.me/blogImg/images/touxiang.jpg'
-                }]
+                    lrc: '../../mp3/boniu.lrc',
+                    cover: '../../img/boniu.jpg'
+                }]*/
             });
         }
     </script>
 </div>
     </div>
+    <div id="aplayer"></div>
     <div class="mid-col">
         <nav id="mobile-nav">
       <div class="overlay">
