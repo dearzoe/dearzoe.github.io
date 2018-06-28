@@ -361,16 +361,13 @@
     <link href="http://huwenzhe.com/2017/06/01/hello-world/"/>
     <id>http://huwenzhe.com/2017/06/01/hello-world/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2018-04-02T07:14:04.943Z</updated>
+    <updated>2018-06-28T04:11:55.312Z</updated>
     
-    <content type="html"><![CDATA[<p>用于记录学到的点滴  –@huwenzhe<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<p>用于记录学到的点滴  –@huwenzhe</p><a id="more"></a><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;用于记录学到的点滴  –@huwenzhe&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/t
-      
+      &lt;p&gt;用于记录学到的点滴  –@huwenzhe&lt;/p&gt;
     
     </summary>
     
