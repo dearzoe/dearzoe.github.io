@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://huwenzhe.com/2018/07/05/es6-Symbol/index.html">
 <meta property="og:site_name" content="成长笔记">
 <meta property="og:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
-<meta property="og:updated_time" content="2018-07-05T10:59:37.327Z">
+<meta property="og:updated_time" content="2018-07-05T11:03:01.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Symbol">
 <meta name="twitter:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
@@ -379,6 +379,10 @@
 <p>显然，你需要对这两个数据进行汇总，结果，就会发现，描述都用了同一个对象属性<code>description</code>，于是整合的时候，就容器冲突，覆盖，导致“人家有男朋友”这么重要的信息都没注意到。</p>
 <p>但是，如果要是Symbol，则完全就不要担心这个问题了：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> info1 = &#123;</span><br><span class="line">    name: <span class="string">'婷婷'</span>,</span><br><span class="line">    age: <span class="number">24</span>,</span><br><span class="line">    job: <span class="string">'公司前台'</span>,</span><br><span class="line">    [<span class="built_in">Symbol</span>(<span class="string">'description'</span>)]: <span class="string">'平时喜欢做做瑜伽，人家有男朋友，你别指望了'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> info2 = &#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>(<span class="string">'description'</span>)]: <span class="string">'这小姑娘挺好的，挺热情的，嘿嘿嘿……'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时，我们对info1, info2对象进行复制，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> target = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, info1, info2);</span><br></pre></td></tr></table></figure>
+<p>此时target对象如下截图所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">target = &#123;</span><br><span class="line">    age:<span class="number">24</span>,</span><br><span class="line">    job:<span class="string">"公司前台"</span>,</span><br><span class="line">    name:<span class="string">"婷婷"</span>,</span><br><span class="line">    <span class="built_in">Symbol</span>(description):<span class="string">"平时喜欢做做瑜伽，人家有男朋友，你别指望了"</span>,</span><br><span class="line">    <span class="built_in">Symbol</span>(description):<span class="string">"这小姑娘挺好的，挺热情的，嘿嘿嘿……"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -390,7 +394,7 @@
         <p><span>本文标题:</span><a href="/2018/07/05/es6-Symbol/">Symbol</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">文哲</a></p>
         <p><span>发布时间:</span>2018-07-05, 00:00:00</p>
-        <p><span>最后更新:</span>2018-07-05, 18:59:37</p>
+        <p><span>最后更新:</span>2018-07-05, 19:03:01</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/05/es6-Symbol/" title="Symbol">http://huwenzhe.com/2018/07/05/es6-Symbol/</a>
             <span class="copy-path" data-clipboard-text="原文: http://huwenzhe.com/2018/07/05/es6-Symbol/　　作者: 文哲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
