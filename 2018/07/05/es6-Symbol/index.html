@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://huwenzhe.com/2018/07/05/es6-Symbol/index.html">
 <meta property="og:site_name" content="成长笔记">
 <meta property="og:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
-<meta property="og:updated_time" content="2018-07-05T10:51:45.137Z">
+<meta property="og:updated_time" content="2018-07-05T10:52:56.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Symbol">
 <meta name="twitter:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
@@ -373,6 +373,7 @@
 <p>再这里，Symbol又是原生JavaScript的一个数据类型<br><strong>undefined</strong>、<strong>null</strong>、<strong>string</strong>、<strong>boolearn</strong>、<strong>number</strong>、<strong>object</strong>、<strong>symbol</strong></p>
 <p>而Symbol本身又是一个方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>();<span class="comment">//"symbol"</span></span><br></pre></td></tr></table></figure></p>
 <p>但是Symbol并不能像<em>string</em>、<em>boolearn</em>、<em>number</em>、<em>object</em>那样作为构造函数使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="comment">/*Uncaught TypeError: Symbol is not a constructor</span></span><br><span class="line"><span class="comment">    at new Symbol (&lt;anonymous&gt;)</span></span><br><span class="line"><span class="comment">    at &lt;anonymous&gt;:1:1*/</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -384,7 +385,7 @@
         <p><span>本文标题:</span><a href="/2018/07/05/es6-Symbol/">Symbol</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">文哲</a></p>
         <p><span>发布时间:</span>2018-07-05, 00:00:00</p>
-        <p><span>最后更新:</span>2018-07-05, 18:51:45</p>
+        <p><span>最后更新:</span>2018-07-05, 18:52:56</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/05/es6-Symbol/" title="Symbol">http://huwenzhe.com/2018/07/05/es6-Symbol/</a>
             <span class="copy-path" data-clipboard-text="原文: http://huwenzhe.com/2018/07/05/es6-Symbol/　　作者: 文哲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
