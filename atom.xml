@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huwenzhe.com/"/>
-  <updated>2018-07-05T10:22:41.207Z</updated>
+  <updated>2018-07-05T10:37:02.489Z</updated>
   <id>http://huwenzhe.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://huwenzhe.com/2018/07/05/es6-Symbol/"/>
     <id>http://huwenzhe.com/2018/07/05/es6-Symbol/</id>
     <published>2018-07-04T16:00:00.000Z</published>
-    <updated>2018-07-05T10:22:41.207Z</updated>
+    <updated>2018-07-05T10:37:02.489Z</updated>
     
-    <content type="html"><![CDATA[<p>ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法</p><a id="more"></a><p>Symbol这个词很少听过，应该是后台的同学听说的比较多，前端我只在ES6中有接触过。</p><ul><li>Symbol的中文意思是符号, 标志, 标记</li><li>\<symbol\>标签在SVG中，用来指代SVG小图标。</symbol\></li></ul><p>再这里，Symbol又是原生JavaScript的一个数据类型</p><div style="margin-top:0px;padding:0px;"><br>    <strong>undefined</strong><br>    <strong>null</strong><br>    <strong>string</strong><br>    <strong>boolearn</strong><br>    <strong>number</strong><br>    <strong>object</strong><br></div><br><div><br>    <strong style="color:red;margin-right:10px;">symbol</strong>是es6新增的<br></div><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法</p><a id="more"></a><p>Symbol这个词很少听过，应该是后台的同学听说的比较多，前端我只在ES6中有接触过。</p><ul><li>Symbol的中文意思是符号, 标志, 标记</li><li>\<symbol\>标签在SVG中，用来指代SVG小图标。</symbol\></li></ul><p>再这里，Symbol又是原生JavaScript的一个数据类型</p><div><br>    这是原始6项:<br>    <strong>undefined</strong><br>    <strong>null</strong><br>    <strong>string</strong><br>    <strong>boolearn</strong><br>    <strong>number</strong><br>    <strong>object</strong><br></div><br><br><br><div><br>    这是新增1项:<br>    <strong style="color:red;margin-right:10px;">symbol</strong><br></div>]]></content>
     
     <summary type="html">
     
