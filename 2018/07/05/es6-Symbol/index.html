@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="成长笔记">
-<meta property="og:url" content="http://huwenzhe.com/archives/page/2/index.html">
+<meta name="description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Symbol">
+<meta property="og:url" content="http://huwenzhe.com/2018/07/05/es6-Symbol/index.html">
 <meta property="og:site_name" content="成长笔记">
+<meta property="og:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
+<meta property="og:updated_time" content="2018-07-05T09:47:14.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成长笔记">
+<meta name="twitter:title" content="Symbol">
+<meta name="twitter:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives | 成长笔记</title>
+<title>Symbol | 成长笔记</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -323,221 +327,274 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-        <div class="body-wrap">
+        <div class="body-wrap"><article id="post-es6-Symbol" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2018/07/05/es6-Symbol/" class="article-date">
+      <time datetime="2018-07-04T16:00:00.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Symbol
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/10/11/npm包管理器/" class="archive-article-date">
-      <time datetime="2017-10-10T16:00:00.000Z" itemprop="datePublished">10-11</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/11/npm包管理器/">npm包管理器发布</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <p>ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法</p>
+<a id="more"></a>
+<p>Symbol这个词很少听过，应该是后台的同学听说的比较多，前端我只在ES6中有接触过。</p>
+<ul>
+<li>Symbol的中文意思是符号, 标志, 标记</li>
+<li>\<symbol\>标签在SVG中，用来指代SVG小图标。</symbol\></li>
+</ul>
+<p>再这里，Symbol又是原生JavaScript的一个数据类型<br><strong>undefined</strong>、<strong>null</strong>、<strong>string</strong>、<strong>boolearn</strong>、<strong>number</strong>、<strong>object</strong>、<span style="color:red"><strong>symbol</strong></span><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure></p>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/05/es6-Symbol/">Symbol</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">文哲</a></p>
+        <p><span>发布时间:</span>2018-07-05, 00:00:00</p>
+        <p><span>最后更新:</span>2018-07-05, 17:47:14</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/05/es6-Symbol/" title="Symbol">http://huwenzhe.com/2018/07/05/es6-Symbol/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://huwenzhe.com/2018/07/05/es6-Symbol/　　作者: 文哲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/10/02/JS爬虫/" class="archive-article-date">
-      <time datetime="2017-10-01T16:00:00.000Z" itemprop="datePublished">10-02</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/02/JS爬虫/">JS爬虫</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js爬虫/">js爬虫</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/20/javascript上传插件/" class="archive-article-date">
-      <time datetime="2017-09-19T16:00:00.000Z" itemprop="datePublished">09-20</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/20/javascript上传插件/">Javascript上传插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/05/git教程/" class="archive-article-date">
-      <time datetime="2017-09-04T16:00:00.000Z" itemprop="datePublished">09-05</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/git教程/">Git的操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/08/buffer/" class="archive-article-date">
-      <time datetime="2017-08-07T16:00:00.000Z" itemprop="datePublished">08-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/08/buffer/">把node捡起来之buffer</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/buffer/">buffer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/06/01/hello-world/" class="archive-article-date">
-      <time datetime="2017-05-31T16:00:00.000Z" itemprop="datePublished">06-01</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/05/04/H5视频音频弹窗/">
+                    H5视频音频弹窗
+                </a>
+            </div>
+        
     </nav>
+
   
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Symbol　| 成长笔记　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
 </div>
+
+
+
+
+
+
+
+    
+<div id="SOHUCS" style="padding: 0px 30px 0px 46px;width: 95%;"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cytdsoNQQ';
+        var conf = 'aa6a1f95c993639471fcff501a394ea7';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+</script>
+    
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/05/04/H5视频音频弹窗/" title="下一篇: H5视频音频弹窗">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/es6-Symbol/">Symbol</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/04/H5视频音频弹窗/">H5视频音频弹窗</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/24/vue对数组变化不刷新问题/">vue对数组变化不刷新问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/02/JavaScript 神经网络库/">JavaScript 神经网络库</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/30/Vue中的Object.defineProperty/">Vue中的 Object.defineProperty</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/10/判断浏览器是否缩放/">判断浏览器是否缩放</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/27/王者荣耀空白名破解/">王者荣耀空白名破解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/节流与分时/">分时与节流</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/干货/">干货[书、视频]</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/13/数组reduce()方法/">数组reduce()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/10/Struts2教程/">Struts2教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/20/React基础/">React基础(非es6写法)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/npm包管理器/">npm包管理器发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/02/JS爬虫/">JS爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/javascript上传插件/">Javascript上传插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/05/git教程/">Git的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/08/buffer/">把node捡起来之buffer</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+<!--/*css3文字2018/4/27  url'http://www.17sucai.com/pins/26326.html'*/-->
+<script>
+        window.onload = function () {
+            //okpt("CSS Particle Effects");
+            function initparticles() {
+                var num = $.rnd(1,6)
+                switch (num) {
+                    case 1:
+                        bubbles();
+                        break;
+                    case 2:
+                        hearts();
+                        break;
+                    case 3:
+                        lines();
+                        break;
+                    case 4:
+                        confetti();
+                        break;
+                    case 5:
+                        fire();
+                        break;
+                    case 6:
+                        sunbeams();
+                        break;
+                }
+            }
+            /*The measurements are ... whack (so to say), for more general text usage I would generate different sized particles for the size of text; consider this pen a POC*/
+            function bubbles() {
+                $.each($(".wrap-word-gw"), function(){
+                    var bubblecount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= bubblecount; i++) {
+                        var size = ($.rnd(40,80)/10);
+                        $(this).append('<span class="bubbles" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function hearts() {
+                $.each($(".wrap-word-gw"), function(){
+                    var heartcount = ($(this).width()/20)*5;
+                    for(var i = 0; i <= heartcount; i++) {
+                        var size = ($.rnd(60,120)/10);
+                        $(this).append('<span class="hearts" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function lines() {
+                $.each($(".wrap-word-gw"), function(){
+                    var linecount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= linecount; i++) {
+                        $(this).append('<span class="lines" style="top:' + $.rnd(-30,30) + '%; left:' + $.rnd(-10,110) + '%;width:' + $.rnd(1,3) + 'px; height:' + $.rnd(20,80) + '%;animation-delay: -' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function confetti() {
+                $.each($(".wrap-word-gw"), function(){
+                    var confetticount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= confetticount; i++) {
+                        $(this).append('<span class="confetti c' + $.rnd(1,2) + '" style="top:' + $.rnd(10,50) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(6,8) + 'px; height:' + $.rnd(3,4) + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function fire() {
+                $.each($(".wrap-word-gw"), function(){
+                    var firecount = ($(this).width()/20)*20;
+                    for(var i = 0; i <= firecount; i++) {
+                        var size = $.rnd(8,12);
+                        $(this).append('<span class="fire" style="top:' + $.rnd(40,70) + '%; left:' + $.rnd(-10,100) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,20)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function sunbeams() {
+                $.each($(".wrap-word-gw"), function(){
+                    var linecount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= linecount; i++) {
+                        $(this).append('<span class="sunbeams" style="top:' + $.rnd(-50,00) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(1,3) + 'px; height:' + $.rnd(80,160) + '%;animation-delay: -' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            jQuery.rnd = function(m,n) {
+                m = parseInt(m);
+                n = parseInt(n);
+                return Math.floor( Math.random() * (n - m + 1) ) + m;
+            }
+            initparticles();
+        }
+</script>
+<!--/*css3文字2018/4/27  url'http://www.17sucai.com/pins/26326.html'*/--></div>
         <footer id="footer">
     <div class="outer">
         <div id="footer-info">
