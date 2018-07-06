@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://huwenzhe.com/2018/07/05/es6-Symbol/index.html">
 <meta property="og:site_name" content="成长笔记">
 <meta property="og:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
-<meta property="og:updated_time" content="2018-07-06T04:02:22.454Z">
+<meta property="og:updated_time" content="2018-07-06T04:16:21.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Symbol">
 <meta name="twitter:description" content="ES6用的并不多，在新的项目中，除了用了一些箭头函数，数组计算方法，块状作用域，其他的用的比较少，这里说一个比较少用的Symbol()方法">
@@ -394,6 +394,9 @@
 <h3 id="再重点：Symbol的语法（光知道作用不行啊）"><a href="#再重点：Symbol的语法（光知道作用不行啊）" class="headerlink" title="再重点：Symbol的语法（光知道作用不行啊）"></a>再重点：Symbol的语法（光知道作用不行啊）</h3><h6 id="语法如下："><a href="#语法如下：" class="headerlink" title="语法如下："></a>语法如下：</h6><p><code>Symbol</code>函数可以接受一个字符串作为参数，表示对 <code>Symbol</code> 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>(<span class="string">'bar'</span>);</span><br><span class="line"></span><br><span class="line">s1 <span class="comment">// Symbol(foo)</span></span><br><span class="line">s2 <span class="comment">// Symbol(bar)</span></span><br><span class="line"></span><br><span class="line">s1.toString() <span class="comment">// "Symbol(foo)"</span></span><br><span class="line">s2.toString() <span class="comment">// "Symbol(bar)"</span></span><br></pre></td></tr></table></figure>
 <p>上面代码中，<strong>s1</strong>和<strong>s2</strong>是两个 <code>Symbol</code> 值。如果不加参数，它们在控制台的输出都是<code>Symbol()</code>，不利于区分。有了参数以后，就等于为它们加上了描述，输出的时候就能够分清，到底是哪一个值。</p>
+<p>如果 <code>Symbol</code> 的参数是一个对象，就会调用该对象的<code>toString</code>方法，将其转为字符串，然后才生成一个 <code>Symbol</code> 值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'abc'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> sym = <span class="built_in">Symbol</span>(obj);</span><br><span class="line">sym <span class="comment">// Symbol(abc)</span></span><br></pre></td></tr></table></figure>
+<p>如果对象没有<code>toString</code>方法…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>([object <span class="built_in">Object</span>])</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>未完待续</p>
 </blockquote>
@@ -408,7 +411,7 @@
         <p><span>本文标题:</span><a href="/2018/07/05/es6-Symbol/">Symbol</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">文哲</a></p>
         <p><span>发布时间:</span>2018-07-05, 00:00:00</p>
-        <p><span>最后更新:</span>2018-07-06, 12:02:22</p>
+        <p><span>最后更新:</span>2018-07-06, 12:16:21</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/05/es6-Symbol/" title="Symbol">http://huwenzhe.com/2018/07/05/es6-Symbol/</a>
             <span class="copy-path" data-clipboard-text="原文: http://huwenzhe.com/2018/07/05/es6-Symbol/　　作者: 文哲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
