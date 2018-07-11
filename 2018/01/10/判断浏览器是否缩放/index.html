@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="文哲" />
+
+
+
+<meta name="description" content="Hello，新年好啊，新年第一篇，并没有写最近学习的python，那个过几天整理一些出来，今天分享的一个小demo">
+<meta name="keywords" content="浏览器兼容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="判断浏览器是否缩放">
+<meta property="og:url" content="http://huwenzhe.com/2018/01/10/判断浏览器是否缩放/index.html">
+<meta property="og:site_name" content="成长笔记">
+<meta property="og:description" content="Hello，新年好啊，新年第一篇，并没有写最近学习的python，那个过几天整理一些出来，今天分享的一个小demo">
+<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/liulan.jpg">
+<meta property="og:image" content="http://dearzoe.coding.me/blogImg/images/suofang.png">
+<meta property="og:updated_time" content="2018-05-04T03:44:37.080Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="判断浏览器是否缩放">
+<meta name="twitter:description" content="Hello，新年好啊，新年第一篇，并没有写最近学习的python，那个过几天整理一些出来，今天分享的一个小demo">
+<meta name="twitter:image" content="http://dearzoe.coding.me/blogImg/images/liulan.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="成长笔记" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/red/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>判断浏览器是否缩放 | 成长笔记</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?83a302dfbd6a25e6d8ad1e604e0375ef";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+<div id="container">
+    <div class="left-col">
+        <div class="overlay" style="opacity: 1;">
+</div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://dearzoe.coding.me/blogImg/images/touxiang.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">文哲</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=825846102@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/dearzoe" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/huwenzhe/activities" title="知乎"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/dearzoe" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buffer/">buffer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js爬虫/">js爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/干货/">干货</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型/">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/王者荣耀/">王者荣耀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cenxiaoer.com/">早教岑小荋</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://lwqwq.com/">lwqwq</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">代码是写给人看的 顺便给机器运行</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+    <canvas id="glCanvas" width="300px" height="300px" style="position:fixed;left:0px;bottom:-10px;z-index: 999999;">
+    </canvas>
+    <script src='/./live2d.min.js'></script>
+    <script src="/./live.min.js"></script>
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+    <script>
+        window.onload = function () {
+            SampleApp2();
+            console.log('\n' + ' %c APlayer' +'这里加了音频按钮，未配置完成'+ ' %c http://aplayer.js.org ' + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
+            var ap = new APlayer({
+                container: document.getElementById('aplayer'),
+                fixed: true,
+                lrcType: 3,
+                audio: [{
+                    name: '崖上的波妞',
+                    artist: '宗介',
+                    url: '../../mp3/崖上的波妞.mp3',
+                    lrc: '../../mp3/boniu.lrc',
+                    cover: '../../img/boniu.jpg'
+                }, {
+                    name: '光るなら',
+                    artist: 'Goose house',
+                    url: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.mp3',
+                    cover: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.jpg',
+                    lrc: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.lrc',
+                    theme: '#ebd0c2'
+                }, {
+                    name: 'トリカゴ',
+                    artist: 'XX:me',
+                    url: 'https://moeplayer.b0.upaiyun.com/aplayer/darling.mp3',
+                    cover: 'https://moeplayer.b0.upaiyun.com/aplayer/darling.jpg',
+                    lrc: 'https://moeplayer.b0.upaiyun.com/aplayer/darling.lrc',
+                    theme: '#46718b'
+                }, {
+                    name: '前前前世',
+                    artist: 'RADWIMPS',
+                    url: 'https://moeplayer.b0.upaiyun.com/aplayer/yourname.mp3',
+                    cover: 'https://moeplayer.b0.upaiyun.com/aplayer/yourname.jpg',
+                    lrc: 'https://moeplayer.b0.upaiyun.com/aplayer/yourname.lrc',
+                    theme: '#505d6b'
+                }]
+                /*mini: false,
+                autoplay: false,
+                theme: '#FADFA3',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: '90px',
+                lrcType: 3,
+                audio: [{
+                    name: '崖上的波妞',
+                    artist: '宗介',
+                    url: '../../mp3/崖上的波妞.mp3',
+                    lrc: '../../mp3/boniu.lrc',
+                    cover: '../../img/boniu.jpg'
+                }]*/
+            });
+        }
+    </script>
+</div>
+    </div>
+    <div id="aplayer"></div>
+    <div class="mid-col">
+        <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">文哲</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://dearzoe.coding.me/blogImg/images/touxiang.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">文哲</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=825846102@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/dearzoe" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/huwenzhe/activities" title="知乎"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/dearzoe" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+        <div class="body-wrap"><article id="post-判断浏览器是否缩放" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/10/判断浏览器是否缩放/" class="article-date">
+      <time datetime="2018-01-09T16:00:00.000Z" itemprop="datePublished">2018-01-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      判断浏览器是否缩放
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><div style="text-align: center;"><br><img src="http://dearzoe.coding.me/blogImg/images/liulan.jpg" alt="浏览器" align="center"><br></div><br>Hello，新年好啊，新年第一篇，并没有写最近学习的python，那个过几天整理一些出来，今天分享的一个小demo</p>
+<a id="more"></a>
+<p><div style="text-align: center;"><br><img src="http://dearzoe.coding.me/blogImg/images/suofang.png" alt="缩放" align="center"><br></div><br>就是如何判断浏览器是否是缩放模式并且兼容IE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$.extend(&#123;</span><br><span class="line">     winZoom:function()&#123;</span><br><span class="line">        var ratio = 0,</span><br><span class="line">            screen = window.screen,//有关用户屏幕的信息</span><br><span class="line">            ua = navigator.userAgent.toLowerCase();//声明了浏览器用于 HTTP 请求的用户代理头的值</span><br><span class="line">        if( ~ua.indexOf(&apos;firefox&apos;) )&#123;//火狐浏览器</span><br><span class="line">            if( window.devicePixelRatio !== undefined )&#123;</span><br><span class="line">                ratio = window.devicePixelRatio;//获取设备像素比</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else if( ~ua.indexOf(&apos;msie&apos;) )&#123;//IE浏览器</span><br><span class="line">            if( screen.deviceXDPI &amp;&amp; screen.logicalXDPI )&#123;</span><br><span class="line">                ratio = screen.deviceXDPI / screen.logicalXDPI;//获取设备像素点比</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else if( window.outerWidth !== undefined &amp;&amp; window.innerWidth !== undefined )&#123;</span><br><span class="line">            ratio = window.outerWidth / window.innerWidth;//屏幕宽度显示宽度比</span><br><span class="line">        &#125;</span><br><span class="line">        if( ratio )&#123;</span><br><span class="line">            ratio = Math.round( ratio * 100 );</span><br><span class="line">        &#125;</span><br><span class="line">        // 360安全浏览器下的innerWidth包含了侧边栏的宽度</span><br><span class="line">        if( ratio !== 100 )&#123;</span><br><span class="line">            if( ratio &gt;= 95 &amp;&amp; ratio &lt;= 105 )&#123;</span><br><span class="line">                ratio = 100;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ratio;</span><br><span class="line">    &#125;&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>~</strong> :if语句中的~号取反的意思，这个比较少用<br> <strong>screen.deviceXDPI</strong> :属性返回显示屏幕的每英寸水平点数。(可理解为innerWidth)<br> <strong>screen.logicalXDPI</strong> :属性返回显示屏幕每英寸的水平方向的常规点数。(可理解为outerWidth)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//执行就不多说了</span><br><span class="line">var zoomFn = function()&#123;</span><br><span class="line">    var ratio = $.winZoom();</span><br><span class="line">    if( ratio &lt; 100 || ratio &gt; 100)&#123;</span><br><span class="line">        $(&quot;.tips-wrapper&quot;).html(&apos;&lt;p class=&quot;alert alert-warning&quot;&gt;浏览器处于缩放模式,为了你更好的浏览体验，请使用ctrl+0进行重置.&lt;/p&gt;&apos;).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        $(&quot;.tips-wrapper&quot;).html(&quot;&quot;).hide();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$(window).resize(function()&#123;</span><br><span class="line">    zoomFn();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">zoomFn();</span><br></pre></td></tr></table></figure>
+<p>祝福大家在新的一年里快速成长，早日步入BAT(ˉ▽￣～)</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/01/10/判断浏览器是否缩放/">判断浏览器是否缩放</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">文哲</a></p>
+        <p><span>发布时间:</span>2018-01-10, 00:00:00</p>
+        <p><span>最后更新:</span>2018-05-04, 11:44:37</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/10/判断浏览器是否缩放/" title="判断浏览器是否缩放">http://huwenzhe.com/2018/01/10/判断浏览器是否缩放/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://huwenzhe.com/2018/01/10/判断浏览器是否缩放/　　作者: 文哲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/03/30/Vue中的Object.defineProperty/">
+                    Vue中的 Object.defineProperty
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/12/27/王者荣耀空白名破解/">
+                    王者荣耀空白名破解
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"判断浏览器是否缩放　| 成长笔记　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+<div id="SOHUCS" style="padding: 0px 30px 0px 46px;width: 95%;"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cytdsoNQQ';
+        var conf = 'aa6a1f95c993639471fcff501a394ea7';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+</script>
+    
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/03/30/Vue中的Object.defineProperty/" title="上一篇: Vue中的 Object.defineProperty">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/12/27/王者荣耀空白名破解/" title="下一篇: 王者荣耀空白名破解">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/Symbol/">Symbol</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/04/H5视频音频弹窗/">H5视频音频弹窗</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/24/vue对数组变化不刷新问题/">vue对数组变化不刷新问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/02/JavaScript 神经网络库/">JavaScript 神经网络库</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/30/Vue中的Object.defineProperty/">Vue中的 Object.defineProperty</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/10/判断浏览器是否缩放/">判断浏览器是否缩放</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/27/王者荣耀空白名破解/">王者荣耀空白名破解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/节流与分时/">分时与节流</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/干货/">干货[书、视频]</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/13/数组reduce()方法/">数组reduce()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/10/Struts2教程/">Struts2教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/20/React基础/">React基础(非es6写法)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/npm包管理器/">npm包管理器发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/02/JS爬虫/">JS爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/javascript上传插件/">Javascript上传插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/05/git教程/">Git的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/08/buffer/">把node捡起来之buffer</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+<!--/*css3文字2018/4/27  url'http://www.17sucai.com/pins/26326.html'*/-->
+<script>
+        window.onload = function () {
+            //okpt("CSS Particle Effects");
+            function initparticles() {
+                var num = $.rnd(1,6)
+                switch (num) {
+                    case 1:
+                        bubbles();
+                        break;
+                    case 2:
+                        hearts();
+                        break;
+                    case 3:
+                        lines();
+                        break;
+                    case 4:
+                        confetti();
+                        break;
+                    case 5:
+                        fire();
+                        break;
+                    case 6:
+                        sunbeams();
+                        break;
+                }
+            }
+            /*The measurements are ... whack (so to say), for more general text usage I would generate different sized particles for the size of text; consider this pen a POC*/
+            function bubbles() {
+                $.each($(".wrap-word-gw"), function(){
+                    var bubblecount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= bubblecount; i++) {
+                        var size = ($.rnd(40,80)/10);
+                        $(this).append('<span class="bubbles" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function hearts() {
+                $.each($(".wrap-word-gw"), function(){
+                    var heartcount = ($(this).width()/20)*5;
+                    for(var i = 0; i <= heartcount; i++) {
+                        var size = ($.rnd(60,120)/10);
+                        $(this).append('<span class="hearts" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function lines() {
+                $.each($(".wrap-word-gw"), function(){
+                    var linecount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= linecount; i++) {
+                        $(this).append('<span class="lines" style="top:' + $.rnd(-30,30) + '%; left:' + $.rnd(-10,110) + '%;width:' + $.rnd(1,3) + 'px; height:' + $.rnd(20,80) + '%;animation-delay: -' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function confetti() {
+                $.each($(".wrap-word-gw"), function(){
+                    var confetticount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= confetticount; i++) {
+                        $(this).append('<span class="confetti c' + $.rnd(1,2) + '" style="top:' + $.rnd(10,50) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(6,8) + 'px; height:' + $.rnd(3,4) + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function fire() {
+                $.each($(".wrap-word-gw"), function(){
+                    var firecount = ($(this).width()/20)*20;
+                    for(var i = 0; i <= firecount; i++) {
+                        var size = $.rnd(8,12);
+                        $(this).append('<span class="fire" style="top:' + $.rnd(40,70) + '%; left:' + $.rnd(-10,100) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,20)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            function sunbeams() {
+                $.each($(".wrap-word-gw"), function(){
+                    var linecount = ($(this).width()/20)*10;
+                    for(var i = 0; i <= linecount; i++) {
+                        $(this).append('<span class="sunbeams" style="top:' + $.rnd(-50,00) + '%; left:' + $.rnd(0,100) + '%;width:' + $.rnd(1,3) + 'px; height:' + $.rnd(80,160) + '%;animation-delay: -' + ($.rnd(0,30)/10) + 's;"></span>');
+                    }
+                });
+            }
+
+            jQuery.rnd = function(m,n) {
+                m = parseInt(m);
+                n = parseInt(n);
+                return Math.floor( Math.random() * (n - m + 1) ) + m;
+            }
+            initparticles();
+        }
+</script>
+<!--/*css3文字2018/4/27  url'http://www.17sucai.com/pins/26326.html'*/--></div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 文哲
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/dearzoe/hexo-theme-zoe" target="_blank" title="Another simple and elegant theme for Hexo from yelee  v3.5">Zoe</a> by dearzoe <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 29;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                console.log(Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+//                $("#container .left-col").css({"background": backgroundimg, "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(ˉ▽￣～)" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "文哲的博客" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+</div>
+</body>
+</html>
